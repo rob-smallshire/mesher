@@ -1,7 +1,6 @@
 import os
 import re
 import sys
-import sysconfig
 import platform
 import subprocess
 
@@ -71,17 +70,11 @@ setup(
     version='0.1',
     author='Robert Smallshire',
     author_email='rob@sixty-north.com',
-    description='Triangular meshes',
+    description='Triangular meshes using CGAL',
     long_description='',
-    # tell setuptools to look for any packages under 'src'
     packages=find_packages('src'),
-    # tell setuptools that all packages will be under the 'src' directory
-    # and nowhere else
     package_dir={'':'src'},
-    # add an extension module named 'python_cpp_example' to the package
-    # 'python_cpp_example'
     ext_modules=[CMakeExtension('mesher/cgal_mesher')],
-    # add custom build_ext command
     cmdclass=dict(build_ext=CMakeBuild),
     zip_safe=False,
 )
