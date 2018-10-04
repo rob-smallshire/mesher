@@ -2,6 +2,8 @@
 #include <string>
 #include <cstdarg>
 #include <cstring>
+#include <cstddef>
+#include <iterator>
 
 #include <boost/lexical_cast.hpp>
 
@@ -33,6 +35,8 @@ template <typename T>
 class TypedInputIterator
 {
 public:
+    typedef std::input_iterator_tag iterator_category;
+    typedef std::ptrdiff_t difference_type;
     typedef T value_type;
     typedef T& reference;
     typedef T* pointer;
