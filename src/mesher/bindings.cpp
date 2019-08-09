@@ -35,11 +35,11 @@ template <typename T>
 class TypedInputIterator
 {
 public:
-    typedef std::input_iterator_tag iterator_category;
-    typedef std::ptrdiff_t difference_type;
-    typedef T value_type;
-    typedef T& reference;
-    typedef T* pointer;
+    using iterator_category = std::input_iterator_tag;
+    using difference_type = std::ptrdiff_t;
+    using value_type = T;
+    using pointer = T*;
+    using reference = T&;
 
     explicit TypedInputIterator(py::iterator& py_iter) :
         py_iter_(py_iter)
